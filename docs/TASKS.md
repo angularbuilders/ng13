@@ -4,7 +4,7 @@
 
 ## 0. Aplicación, módulo y componente raíz
 
-- [ ] Conocer la estructura de la aplicación
-- [ ] Ejecutar la aplicación
-- [ ] Limpiar el componente raíz
-- [ ] Instalar un framework css (_picocss_)
+- [x] Conocer la estructura de la aplicación
+- [x] Ejecutar la aplicación
+- [x] Limpiar el componente raíz
+- [x] Instalar un framework css (_picocss_)
