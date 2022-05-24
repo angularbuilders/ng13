@@ -25,3 +25,18 @@
 - [ ] Show trip details
 - [ ] Confirmed trips in green, waiting trips in orange
 - [ ] Show an icon to indicate the trip kind
+
+## 2. Modules
+
+- [x] Create a Core module
+- [x] Move the header node to the Core module
+- [x] Move the title node to a new private component
+- [x] Use the Title component in the header
+- [ ] Create a Home module
+- [ ] Move the main node to the Home component
+- [x] Create a Shared module
+
+> Student tasks:
+
+- [ ] Move the footer node to the Core module
+- [ ] Use the Title component in the footer
