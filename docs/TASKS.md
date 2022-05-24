@@ -20,11 +20,11 @@
 
 > Student tasks:
 
-- [ ] Show trips counter
-- [ ] List all trips
-- [ ] Show trip details
-- [ ] Confirmed trips in green, waiting trips in orange
-- [ ] Show an icon to indicate the trip kind
+- [x] Show trips counter
+- [x] List all trips
+- [x] Show trip details
+- [x] Confirmed trips in green, waiting trips in orange
+- [x] Show an icon to indicate the trip kind
 
 ## 2. Modules
 
@@ -32,11 +32,14 @@
 - [x] Move the header node to the Core module
 - [x] Move the title node to a new private component
 - [x] Use the Title component in the header
-- [ ] Create a Home module
-- [ ] Move the main node to the Home component
-- [x] Create a Shared module
 
 > Student tasks:
 
 - [ ] Move the footer node to the Core module
 - [ ] Use the Title component in the footer
+
+- [ ] Create a Home module
+- [ ] Move the main node to the Home component
+- [x] Create a Shared module
+- [ ] Move the article header to the Shared module
+- [ ] Use the @input() in the article header to accept a title
