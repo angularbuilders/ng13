@@ -1,0 +1,7 @@
+.Active {
+  font-style:normal;
+  font-weight:bold;
+}
+.Pending {
+  font-style: italic;
+}

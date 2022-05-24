@@ -3,9 +3,17 @@
     <h1>{{ title }}</h1>
   </header>
   <main>
-    <router-outlet></router-outlet>
+    <h3>We work with {{ agencies.length }} agencies</h3>
+    <ul>
+      <li *ngFor="let agency of agencies">
+        <span [ngClass]="agency.status">{{ agency.name }}</span>
+        <span *ngIf="agency.range==='Interplanetary'"> 💫 </span>
+        <span *ngIf="agency.range==='Orbital'"> 🌎 </span>
+      </li>
+    </ul>
+    <!-- <router-outlet></router-outlet> -->
   </main>
   <footer>
-    <h2>{{ subtitle }}</h2>
+    <p>{{ subtitle | uppercase }}</p>
   </footer>
 </body>
