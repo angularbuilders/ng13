@@ -90,4 +90,9 @@ export class AppComponent {
       premiumFoodPrice: 1000,
     },
   ];
+  reloading = false;
+  reload(list: string) {
+    this.reloading = true;
+    console.warn(`♻️ Reloading ${list}`);
+  }
 }

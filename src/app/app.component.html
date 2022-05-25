@@ -10,6 +10,7 @@
           <span *ngIf="agency.range==='Orbital'"> 🌎 </span>
         </li>
       </ul>
+      <button (click)="reload('trips')"> ♻️ </button>
     </article>
     <article>
       <h3>We work with {{ trips.length }} trips</h3>
@@ -20,7 +21,9 @@
           <span *ngIf="trip.kind==='TripOnly'"> 🧑🏼‍🚀 </span>
         </li>
       </ul>
+      <button (click)="reload('trips')"> ♻️ </button>
     </article>
+    <aside *ngIf="reloading"> ♻️ Reloading... </aside>
     <!-- <router-outlet></router-outlet> -->
   </main>
   <footer>
