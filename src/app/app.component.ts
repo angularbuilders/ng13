@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Astro Bookings';
-  subtitle = 'Welcome on board';
   agencies = [
     {
       id: 'space-y',

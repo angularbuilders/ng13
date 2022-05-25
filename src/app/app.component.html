@@ -2,7 +2,7 @@
   <app-header></app-header>
   <main>
     <article>
-      <h3>We work with {{ getAgenciesCounter() }} agencies</h3>
+      <h3>Working with {{ getAgenciesCounter() }} agencies</h3>
       <ul>
         <li *ngFor=" let agency of agencies ">
           <span [ngClass]="agency.status | lowercase">{{ agency.name }}</span>
@@ -13,7 +13,7 @@
       <button (click)="reload('agencies')"> ♻️ </button>
     </article>
     <article>
-      <h3>We work with {{ trips.length }} trips</h3>
+      <h3>Offering {{ trips.length }} trips</h3>
       <ul>
         <li *ngFor="let trip of trips">
           <span [ngClass]="getClassForStatus(trip.status)">{{ trip.destination }}</span>
@@ -27,8 +27,5 @@
     <aside *ngIf="reloading"> ♻️ Reloading... </aside>
     <!-- <router-outlet></router-outlet> -->
   </main>
-  <footer>
-    <p>🚀 {{ title | uppercase }}</p>
-    <p>{{ subtitle }}</p>
-  </footer>
+  <app-footer></app-footer>
 </body>
