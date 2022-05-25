@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReloadingComponent } from './reloading/reloading.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ReloadingComponent],
   imports: [CommonModule],
-  exports: [],
+  exports: [ReloadingComponent],
 })
 export class SharedModule {}

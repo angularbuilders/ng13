@@ -41,9 +41,7 @@
 
 - [ ] Move the footer node to the Core module
 - [ ] Use the Title component in the footer
-
 - [ ] Create a Home module
 - [ ] Move the main node to the Home component
-- [x] Create a Shared module
-- [ ] Move the article header to the Shared module
-- [ ] Use the @input() in the article header to accept a title
+- [ ] Create a Shared module
+- [ ] Move the reloading content to a component on the Shared module
