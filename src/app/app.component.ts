@@ -95,4 +95,13 @@ export class AppComponent {
     this.reloading = true;
     console.warn(`♻️ Reloading ${list}`);
   }
+  getAgenciesCounter() {
+    return this.agencies.length;
+  }
+  getClassForStatus(status: string) {
+    if (status === 'Confirmed') {
+      return 'green';
+    }
+    return 'orange';
+  }
 }
