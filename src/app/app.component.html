@@ -1,19 +1,34 @@
 <body>
-  <header>
-    <h1>{{ title }}</h1>
-  </header>
+  <app-header></app-header>
   <main>
-    <h3>We work with {{ agencies.length }} agencies</h3>
-    <ul>
-      <li *ngFor="let agency of agencies">
-        <span [ngClass]="agency.status">{{ agency.name }}</span>
-        <span *ngIf="agency.range==='Interplanetary'"> 💫 </span>
-        <span *ngIf="agency.range==='Orbital'"> 🌎 </span>
-      </li>
-    </ul>
+    <article>
+      <h3>We work with {{ getAgenciesCounter() }} agencies</h3>
+      <ul>
+        <li *ngFor=" let agency of agencies ">
+          <span [ngClass]="agency.status | lowercase">{{ agency.name }}</span>
+          <span *ngIf="agency.range==='Interplanetary' ; else orbital"> 💫 </span>
+          <ng-template #orbital> 🌎 </ng-template>
+        </li>
+      </ul>
+      <button (click)="reload('agencies')"> ♻️ </button>
+    </article>
+    <article>
+      <h3>We work with {{ trips.length }} trips</h3>
+      <ul>
+        <li *ngFor="let trip of trips">
+          <span [ngClass]="getClassForStatus(trip.status)">{{ trip.destination }}</span>
+          <ng-container *ngIf="trip.kind==='WithStay' then withStay; else tripOnly"></ng-container>
+          <ng-template #withStay> 🧳 </ng-template>
+          <ng-template #tripOnly> 🧑🏼‍🚀 </ng-template>
+        </li>
+      </ul>
+      <button (click)="reload('trips')"> ♻️ </button>
+    </article>
+    <aside *ngIf="reloading"> ♻️ Reloading... </aside>
     <!-- <router-outlet></router-outlet> -->
   </main>
   <footer>
+    <h6>🚀 {{ title }}</h6>
     <p>{{ subtitle | uppercase }}</p>
   </footer>
 </body>

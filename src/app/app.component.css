@@ -5,3 +5,9 @@
 .Pending {
   font-style: italic;
 }
+.Confirmed {
+  color:darkgreen
+}
+.Waiting {
+  color:orange
+}
