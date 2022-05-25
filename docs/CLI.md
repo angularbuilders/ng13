@@ -20,7 +20,9 @@ ng g c core/header --export
 ng g c core/title
 ng g m shared
 
-# student tasks
 ng g c core/footer --export
+
+ng g m home
+ng g c home --export
 
 ```
