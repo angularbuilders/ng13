@@ -45,3 +45,9 @@
 - [ ] Move the main node to the Home component
 - [ ] Create a Shared module
 - [ ] Move the reloading content to a component on the Shared module
+
+## 3. Routes
+
+- [ ] Route for home page (/) bind to HomeComponent
+- [ ] Route for an about page (`/about`) bind lazy to AboutModule
+- [ ] Route for a register page (`/register`) bind lazy to RegisterModule
