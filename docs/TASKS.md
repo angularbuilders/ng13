@@ -50,4 +50,13 @@
 
 - [ ] Route for home page (/) bind to HomeComponent
 - [ ] Route for an about page (`/about`) bind lazy to AboutModule
-- [ ] Route for a register page (`/register`) bind lazy to RegisterModule
+- [ ] Route for a register page (`auth/register`) bind lazy to RegisterModule
+- [ ] Route for an agencies page (`/agencies`) bind lazy to AgenciesModule
+- [ ] Route for an agency page (`/agencies/:id`) bind lazy to AgencyModule
+
+> Student tasks:
+
+- [ ] Route for an about page (`/contact`) bind lazy to ContactModule
+- [ ] Route for a login page (`auth/login`) bind lazy to LoginModule
+- [ ] Route for a trips page (`/trips`) bind lazy to TripsModule
+- [ ] Route for a trip page (`/trips/:id`) bind lazy to TripModule
