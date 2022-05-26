@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  agencies = [
+  public agencies = [
     {
       id: 'space-y',
       name: 'Space Y',
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
       status: 'Pending',
     },
   ];
-  trips = [
+  public trips = [
     {
       id: 'space-y-moon-1',
       agencyId: 'space-y',
@@ -88,20 +88,20 @@ export class HomeComponent implements OnInit {
       premiumFoodPrice: 1000,
     },
   ];
-  reloading = false;
-  reload(list: string) {
+  public reloading = false;
+  public reload(list: string) {
     this.reloading = true;
     console.warn(`♻️ Reloading ${list}`);
   }
-  getAgenciesCounter() {
+  public getAgenciesCounter() {
     return this.agencies.length;
   }
-  getClassForStatus(status: string) {
+  public getClassForStatus(status: string) {
     if (status === 'Confirmed') {
       return 'green';
     }
     return 'orange';
   }
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 }
