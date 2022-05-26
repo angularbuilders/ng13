@@ -106,5 +106,5 @@ export class HomeComponent implements OnInit {
     return '';
   }
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 }

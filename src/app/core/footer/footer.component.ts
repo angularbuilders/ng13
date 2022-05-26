@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent implements OnInit {
-  subtitle = 'Welcome on board';
+  public subtitle = 'Welcome on board';
+  public author = 'Alberto Basalo';
+  public authorUrl = 'https://twitter.com/albertobasalo';
+
   constructor() {}
 
   ngOnInit(): void {}
