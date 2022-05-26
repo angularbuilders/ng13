@@ -1,0 +1,12 @@
+<article>
+  <h3>Working with {{ getAgenciesCounter() }} agencies</h3>
+  <ul>
+    <li *ngFor="let agency of agencies ">
+      <a [ngClass]="agency.status | lowercase"
+         [routerLink]="['/' ,'agencies', agency.id]">{{ agency.name }}</a>
+      <span *ngIf="agency.range==='Interplanetary' ; else orbital"> 💫 </span>
+      <ng-template #orbital> 🌎 </ng-template>
+    </li>
+  </ul>
+  <button (click)="reload('agencies')"> ♻️ </button>
+</article>

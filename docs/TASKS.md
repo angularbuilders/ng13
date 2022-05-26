@@ -51,12 +51,16 @@
 - [x] Route for home page (/) bind to HomeComponent
 - [x] Route for an about page (`/about`) bind lazy to AboutModule
 - [x] Route for a register page (`auth/register`) bind lazy to RegisterModule
-- [ ] Route for an agencies page (`/agencies`) bind lazy to AgenciesModule
-- [ ] Route for an agency page (`/agencies/:id`) bind lazy to AgencyModule
+- [x] Route for an agencies page (`/agencies`) bind lazy to AgenciesModule
+- [x] Use a shared agencies list component on the agencies page
+- [x] Route for an agency page (`/agencies/:id`) bind lazy to AgencyModule
+- [x] Use an agency details component on the agency page
 
 > Student tasks:
 
 - [ ] Route for an about page (`/contact`) bind lazy to ContactModule
 - [ ] Route for a login page (`auth/login`) bind lazy to LoginModule
 - [ ] Route for a trips page (`/trips`) bind lazy to TripsModule
+- [ ] Use a shared trips list component on the trips page
 - [ ] Route for a trip page (`/trips/:id`) bind lazy to TripModule
+- [ ] Use a trip details component on the trip page

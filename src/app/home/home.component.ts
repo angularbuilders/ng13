@@ -6,26 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public agencies = [
-    {
-      id: 'space-y',
-      name: 'Space Y',
-      range: 'Interplanetary',
-      status: 'Active',
-    },
-    {
-      id: 'green-origin',
-      name: 'Green Origin',
-      range: 'Orbital',
-      status: 'Active',
-    },
-    {
-      id: 'virgin-way',
-      name: 'Virgin Way',
-      range: 'Orbital',
-      status: 'Pending',
-    },
-  ];
   public trips = [
     {
       id: 'space-y-moon-1',
@@ -88,13 +68,11 @@ export class HomeComponent implements OnInit {
       premiumFoodPrice: 1000,
     },
   ];
+
   public reloading = false;
   public reload(list: string) {
     this.reloading = true;
     console.warn(`♻️ Reloading ${list}`);
-  }
-  public getAgenciesCounter() {
-    return this.agencies.length;
   }
   public getClassForStatus(status: string) {
     if (status === 'Confirmed') return 'green';
