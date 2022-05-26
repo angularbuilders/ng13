@@ -97,9 +97,7 @@ export class HomeComponent implements OnInit {
     return this.agencies.length;
   }
   public getClassForStatus(status: string) {
-    if (status === 'Confirmed') {
-      return 'green';
-    }
+    if (status === 'Confirmed') return 'green';
     return 'orange';
   }
   public getClassForPlaces(places: number) {
