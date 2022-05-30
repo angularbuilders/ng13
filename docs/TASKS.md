@@ -39,12 +39,12 @@
 
 > Student tasks:
 
-- [ ] Move the footer node to the Core module
-- [ ] Use the Title component in the footer
-- [ ] Create a Home module
-- [ ] Move the main node to the Home component
-- [ ] Create a Shared module
-- [ ] Move the reloading content to a component on the Shared module
+- [x] Move the footer node to the Core module
+- [x] Use the Title component in the footer
+- [x] Create a Home module
+- [x] Move the main node to the Home component
+- [x] Create a Shared module
+- [x] Move the reloading content to a component on the Shared module
 
 ## 3. Routes
 
@@ -58,9 +58,9 @@
 
 > Student tasks:
 
-- [ ] Route for an about page (`/contact`) bind lazy to ContactModule
-- [ ] Route for a login page (`auth/login`) bind lazy to LoginModule
-- [ ] Route for a trips page (`/trips`) bind lazy to TripsModule
-- [ ] Use a shared trips list component on the trips page
-- [ ] Route for a trip page (`/trips/:id`) bind lazy to TripModule
-- [ ] Use a trip details component on the trip page
+- [x] Route for an about page (`/contact`) bind lazy to ContactModule
+- [x] Route for a login page (`auth/login`) bind lazy to LoginModule
+- [x] Route for a trips page (`/trips`) bind lazy to TripsModule
+- [x] Use a shared trips list component on the trips page
+- [x] Route for a trip page (`/trips/:id`) bind lazy to TripModule
+- [x] Use a trip details component on the trip page
