@@ -1,16 +1,15 @@
-.active {
-  font-style: normal;
-  font-weight: bold;
-}
-
-.pending {
-  font-style: italic;
-}
-
 .green {
   color: darkgreen
 }
 
 .orange {
+  color: orange
+}
+
+.sold-out {
+  color: red
+}
+
+.few-places {
   color: orange
 }
