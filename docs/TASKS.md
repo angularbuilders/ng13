@@ -68,7 +68,7 @@
 ## 4. Forms
 
 - [x] Create a form for the contact page
-- [ ] Create a form for the register page
+- [x] Create a form for the register page
 - [ ] Create a form for new booking
 
 > Student tasks:
