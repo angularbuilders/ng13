@@ -45,3 +45,10 @@ ng g c shared/trips --export --type=list
 
 ng g m trips/trip --module=trips --route=trip/:id
 ```
+
+## 4. Forms
+
+```bash
+ng g c contact --type=form
+ng g c auth/register --type=form
+```

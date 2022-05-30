@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <div>
+    <label for="name"> <span *ngIf="hasError('name')">⭕</span> Your name </label>
+    <input type="text"
+           name="name"
+           formControlName="name"
+           [attr.aria-invalid]="hasError('name')">
+    <small *ngIf="mustShowMessage('name')">{{ getErrorMessage('name') }}</small>
+  </div>
+  <div>
+    <label for="email"> <span *ngIf="hasError('email')">⭕</span> Your email address </label>
+    <input type="email"
+           name="email"
+           formControlName="email"
+           [attr.aria-invalid]="hasError('email')">
+    <small *ngIf="mustShowMessage('email')">{{ getErrorMessage('email') }}</small>
+  </div>
+  <div>
+    <label for="message"> <span *ngIf="hasError('message')">⭕</span> Your message </label>
+    <textarea name="message"
+              formControlName="message"
+              [attr.aria-invalid]="hasError('message')"></textarea>
+    <small *ngIf="mustShowMessage('message')"> {{ getErrorMessage('message') }}</small>
+  </div>
+</form>
