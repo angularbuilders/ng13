@@ -22,4 +22,7 @@
               [attr.aria-invalid]="hasError('message')"></textarea>
     <small *ngIf="mustShowMessage('message')"> {{ getErrorMessage('message') }}</small>
   </div>
+  <button type="submit"
+          (click)="onSubmitClick()"
+          [disabled]="form.invalid"> Send contact message </button>
 </form>

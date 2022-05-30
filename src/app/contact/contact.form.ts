@@ -51,6 +51,11 @@ export class ContactForm implements OnInit {
     return errorMessage;
   }
 
+  public onSubmitClick() {
+    const contact = this.form.value;
+    console.warn('Send contact message', contact);
+  }
+
   private getControl(controlName: string): AbstractControl | null {
     return this.form.get(controlName);
   }
