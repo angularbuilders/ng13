@@ -69,7 +69,7 @@
 
 - [x] Create a form for the contact page
 - [x] Create a form for the register page
-- [ ] Create a form for new booking
+- [ ] Create a form for a new Agency
 
 > Student tasks:
 

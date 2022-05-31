@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let agency of agencies ">
       <a [ngClass]="agency.status | lowercase"
-         [routerLink]="['/' ,'agencies', agency.id]">{{ agency.name }}</a>
+         [routerLink]="['/' ,'agencies', 'agency',agency.id]">{{ agency.name }}</a>
       <span *ngIf="agency.range==='Interplanetary' ; else orbital"> 💫 </span>
       <ng-template #orbital> 🌎 </ng-template>
     </li>

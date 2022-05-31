@@ -29,31 +29,31 @@ ng g c shared/reloading --export
 ## 3. Router
 
 ```bash
-ng g m about --route=about --module=app
+ng g m about -m=app --route=about
 ng g c about --type=page
 
-ng g m contact --route=contact --module=app
+ng g m contact -m=app --route=contact
 ng g c contact --type=page
 
-ng g m auth/register --route=auth/register --module=app
+ng g m auth/register -m=app --route=auth/register
 ng g c auth/register --type=page
 
-ng g m auth/login --route=auth/login --module=app
+ng g m auth/login --route=auth/login -m=app
 ng g c auth/login --type=page
 
-ng g m agencies --route=agencies --module=app
+ng g m agencies --route=agencies -m=app
 ng g c agencies --type=page
 ng g c shared/agencies --export --type=list
 
-ng g m agencies/agency --module=agencies --route=agency/:id
+ng g m agencies/agency -m=agencies --route=agency/:id
 ng g c agencies/agency --type=page
 
 
-ng g m trips --route=trips --module=app
+ng g m trips --route=trips -m=app
 ng g c trips --type=page
 ng g c shared/trips --export --type=list
 
-ng g m trips/trip --module=trips --route=trip/:id
+ng g m trips/trip -m=trips --route=trip/:id
 ng g c trips/trip --type=page
 ```
 
@@ -62,4 +62,8 @@ ng g c trips/trip --type=page
 ```bash
 ng g c contact --type=form
 ng g c auth/register --type=form
+
+ng g m agencies/new-agency -m=agencies --route=agency/new
+ng g c agencies/new-agency --type=page
+ng g c agencies/new-agency --type=form
 ```
