@@ -3,10 +3,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-trip',
-  templateUrl: './trip.component.html',
-  styleUrls: ['./trip.component.css'],
+  templateUrl: './trip.page.html',
+  styleUrls: ['./trip.page.css'],
 })
-export class TripComponent implements OnInit {
+export class TripPage implements OnInit {
   public tripId = '';
   constructor(private route: ActivatedRoute) {}
 

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AgenciesComponent } from './agencies.component';
+import { AgenciesPage } from './agencies.page';
 
 const routes: Routes = [
-  { path: '', component: AgenciesComponent },
+  { path: '', component: AgenciesPage },
   {
     path: ':id',
     loadChildren: () =>
