@@ -1,17 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import { AgencyRoutingModule } from './agency-routing.module';
-import { AgencyComponent } from './agency.component';
-
+import { AgencyPage } from './agency.page';
 
 @NgModule({
-  declarations: [
-    AgencyComponent
-  ],
-  imports: [
-    CommonModule,
-    AgencyRoutingModule
-  ]
+  declarations: [AgencyPage],
+  imports: [CommonModule, AgencyRoutingModule],
 })
-export class AgencyModule { }
+export class AgencyModule {}
