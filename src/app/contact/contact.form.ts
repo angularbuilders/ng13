@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { BaseForm } from '../core/base/base-form';
+import { FormBase } from '../core/base/form-base';
 import { FormMessagesService } from '../core/services/form-messages.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormMessagesService } from '../core/services/form-messages.service';
   templateUrl: './contact.form.html',
   styleUrls: ['./contact.form.css'],
 })
-export class ContactForm extends BaseForm implements OnInit {
+export class ContactForm extends FormBase implements OnInit {
   constructor(formMessages: FormMessagesService, formBuilder: FormBuilder) {
     super(formMessages);
     this.form = formBuilder.group({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { BaseForm } from 'src/app/core/base/base-form';
+import { FormBase } from 'src/app/core/base/form-base';
 import { FormMessagesService } from 'src/app/core/services/form-messages.service';
 import { FormValidatorService } from 'src/app/core/services/form-validator.service';
 
@@ -9,7 +9,7 @@ import { FormValidatorService } from 'src/app/core/services/form-validator.servi
   templateUrl: './register.form.html',
   styleUrls: ['./register.form.css'],
 })
-export class RegisterForm extends BaseForm implements OnInit {
+export class RegisterForm extends FormBase implements OnInit {
   constructor(
     formMessages: FormMessagesService,
     formValidator: FormValidatorService,

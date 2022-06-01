@@ -73,5 +73,12 @@ ng g c agencies/new-agency --type=form
 ```bash
 ng g s core/services/form-validator
 ng g s core/services/form-messages
-ng g class core/base/BaseForm
+ng g class core/base/form-base
+ng g s core/services/util
+
+ng g i core/api/models/agency --type=interface
+ng g s core/api/services/agencies
+ng g i core/api/models/id-name --type=interface
+ng g i core/api/models/trip --type=interface
+ng g s core/api/services/trips
 ```

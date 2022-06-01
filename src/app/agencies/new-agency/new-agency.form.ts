@@ -1,27 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { BaseForm } from 'src/app/core/base/base-form';
+import { IdName } from 'src/app/core/api/models/id-name.interface';
+import { AgenciesService } from 'src/app/core/api/services/agencies.service';
+import { FormBase } from 'src/app/core/base/form-base';
 import { FormMessagesService } from 'src/app/core/services/form-messages.service';
+import { UtilService } from 'src/app/core/services/util.service';
 
 @Component({
   selector: 'app-new-agency-form',
   templateUrl: './new-agency.form.html',
   styleUrls: ['./new-agency.form.css'],
 })
-export class NewAgencyForm extends BaseForm implements OnInit {
-  // public form: FormGroup;
-  public ranges = [
-    { id: 'Orbital', name: '🌎 Orbiting around the earth' },
-    {
-      id: 'Interplanetary',
-      name: '🌕 To the moon and other plantes',
-    },
-    { id: 'Interstellar', name: '💫 Traveling to other stars' },
-  ];
-  public statuses = ['Active', 'Pending'];
+export class NewAgencyForm extends FormBase implements OnInit {
+  public ranges: IdName[];
+  public statuses: string[];
 
-  constructor(formMessages: FormMessagesService, formBuilder: FormBuilder) {
+  constructor(
+    agencies: AgenciesService,
+    formBuilder: FormBuilder,
+    formMessages: FormMessagesService,
+    private util: UtilService
+  ) {
     super(formMessages);
+    this.ranges = agencies.getRanges();
+    this.statuses = agencies.getStatuses();
     this.form = formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       range: new FormControl('', [Validators.required]),
@@ -38,13 +40,9 @@ export class NewAgencyForm extends BaseForm implements OnInit {
 
   public onSubmitClick() {
     const { name, range, status } = this.form.value;
-    const id = this.getDashId(name);
+    const id = this.util.getDashId(name);
     const newAgencyData = { id, name, range, status };
     console.warn('Send register data ', newAgencyData);
-  }
-
-  private getDashId(str: string): string {
-    return str.toLocaleLowerCase().replace(/ /g, '-');
   }
 
   ngOnInit(): void {}
