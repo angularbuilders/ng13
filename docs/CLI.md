@@ -67,3 +67,11 @@ ng g m agencies/new-agency -m=agencies --route=agency/new
 ng g c agencies/new-agency --type=page
 ng g c agencies/new-agency --type=form
 ```
+
+## 5. Services
+
+```bash
+ng g s core/services/form-validator
+ng g s core/services/form-messages
+ng g class core/base/BaseForm
+```

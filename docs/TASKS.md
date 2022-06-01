@@ -75,3 +75,10 @@
 
 - [ ] Create a form for the login page
 - [ ] Create a form for a new Trip
+
+## 5. Services
+
+- [x] Create a service to validate forms
+- [x] Create a service to manage form messages
+- [x] Create a class as a base to form components
+- [x] Create a service to manage agencies
