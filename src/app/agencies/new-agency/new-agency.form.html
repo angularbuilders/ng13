@@ -13,18 +13,25 @@
       <select name="range"
               formControlName="range"
               (change)="onChange('range',$event)">
-        <option *ngFor="let range of ranges">{{ range }}</option>
+        <option selected
+                value="">Select a range</option>
+        <option *ngFor="let range of ranges"
+                [value]="range.id">{{ range.name }}</option>
       </select>
       <small *ngIf="mustShowMessage('range')">{{ getErrorMessage('range') }}</small>
     </div>
     <div>
       <label for="status"> Operation status <span *ngIf="hasError('status')">⭕</span></label>
-      <select name="status"
-              formControlName="status"
-              (change)="onChange('status',$event)">
-        <option *ngFor="let status of statuses">{{ status }}</option>
-      </select>
-      <small *ngIf="mustShowMessage('status')">{{ getErrorMessage('status') }}</small>
+      <ng-container *ngFor="let status of statuses">
+        <label for="status-{{status}}">
+          <input name="status"
+                 type="radio"
+                 id="status-{{status}}"
+                 formControlName="status"
+                 [value]="status">
+          {{ status }}
+        </label>
+      </ng-container>
     </div>
   </fieldset>
   <div>

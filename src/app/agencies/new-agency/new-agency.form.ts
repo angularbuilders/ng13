@@ -14,13 +14,20 @@ import {
 })
 export class NewAgencyForm implements OnInit {
   public form: FormGroup;
-  public ranges = ['Orbital', 'Interplanetary'];
+  public ranges = [
+    { id: 'Orbital', name: '🌎 Orbiting around the earth' },
+    {
+      id: 'Interplanetary',
+      name: '🌕 To the moon and other plantes',
+    },
+    { id: 'Interstellar', name: '💫 Traveling to other stars' },
+  ];
   public statuses = ['Active', 'Pending'];
 
   constructor(formBuilder: FormBuilder) {
     this.form = formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      range: new FormControl(this.ranges[0]),
+      range: new FormControl('', [Validators.required]),
       status: new FormControl(this.statuses[0]),
     });
   }
