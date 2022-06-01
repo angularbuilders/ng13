@@ -43,7 +43,7 @@ ng g c auth/login --type=page
 
 ng g m agencies --route=agencies --module=app
 ng g c agencies --type=page
-ng g c shared/agencies --export --type=list
+ng g c shared/components/agencies --export --type=list
 
 ng g m agencies/agency --module=agencies --route=agency/:id
 ng g c agencies/agency --type=page
@@ -51,7 +51,7 @@ ng g c agencies/agency --type=page
 
 ng g m trips --route=trips --module=app
 ng g c trips --type=page
-ng g c shared/trips --export --type=list
+ng g c shared/components/trips --export --type=list
 
 ng g m trips/trip --module=trips --route=trip/:id
 ng g c trips/trip --type=page
