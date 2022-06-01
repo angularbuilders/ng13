@@ -15,15 +15,15 @@ npm install @picocss/pico
 
 ```bash
 ng g m core
-ng g c core/header --export
-ng g c core/title
-ng g c core/footer --export
+ng g c core/components/header --export
+ng g c core/components/title
+ng g c core/components/footer --export
 
 ng g m home
 ng g c home --export
 
 ng g m shared
-ng g c shared/reloading --export
+ng g c shared/components/reloading --export
 ```
 
 ## 3. Router
@@ -43,7 +43,7 @@ ng g c auth/login --type=page
 
 ng g m agencies --route=agencies -m=app
 ng g c agencies --type=page
-ng g c shared/agencies --export --type=list
+ng g c shared/components/agencies --export --type=list
 
 ng g m agencies/agency -m=agencies --route=agency/:id
 ng g c agencies/agency --type=page
@@ -51,7 +51,7 @@ ng g c agencies/agency --type=page
 
 ng g m trips --route=trips -m=app
 ng g c trips --type=page
-ng g c shared/trips --export --type=list
+ng g c shared/components/trips --export --type=list
 
 ng g m trips/trip -m=trips --route=trip/:id
 ng g c trips/trip --type=page
