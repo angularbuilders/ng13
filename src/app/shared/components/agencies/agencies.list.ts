@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Agency } from 'src/app/core/api/models/agency.interface';
-import { AgenciesService } from 'src/app/core/api/services/agencies.service';
+import { AgenciesService } from 'src/app/core/api/agencies.service';
+import { Agency } from 'src/app/core/api/agency.interface';
 
 @Component({
   selector: 'app-agencies-list',

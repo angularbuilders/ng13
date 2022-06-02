@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Agency } from '../models/agency.interface';
-import { IdName } from '../models/id-name.interface';
+import { Agency } from './agency.interface';
+import { IdName } from './id-name.interface';
 
 @Injectable({
   providedIn: 'root',

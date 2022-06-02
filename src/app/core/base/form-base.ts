@@ -1,5 +1,5 @@
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { FormMessagesService } from '../services/form-messages.service';
+import { FormMessagesService } from './form-messages.service';
 
 export class FormBase {
   public form!: FormGroup;

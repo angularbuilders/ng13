@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { IdName } from 'src/app/core/api/models/id-name.interface';
-import { AgenciesService } from 'src/app/core/api/services/agencies.service';
+import { AgenciesService } from 'src/app/core/api/agencies.service';
+import { IdName } from 'src/app/core/api/id-name.interface';
 import { FormBase } from 'src/app/core/base/form-base';
-import { FormMessagesService } from 'src/app/core/services/form-messages.service';
-import { UtilService } from 'src/app/core/services/util.service';
+import { FormMessagesService } from 'src/app/core/base/form-messages.service';
+import { UtilService } from 'src/app/core/base/util.service';
 
 @Component({
   selector: 'app-new-agency-form',
