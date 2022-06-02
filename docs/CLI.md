@@ -48,7 +48,6 @@ ng g c shared/components/agencies --export --type=list
 ng g m agencies/agency --module=agencies --route=agency/:id
 ng g c agencies/agency --type=page
 
-
 ng g m trips --route=trips --module=app
 ng g c trips --type=page
 ng g c shared/components/trips --export --type=list
