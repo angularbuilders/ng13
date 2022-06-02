@@ -9,16 +9,18 @@ import { IdName } from 'src/app/core/api/id-name.interface';
   styleUrls: ['./new-agency.page.css'],
 })
 export class NewAgencyPage implements OnInit {
-  public ranges: IdName[];
-  public statuses: string[];
+  public ranges: IdName[] = [];
+  public statuses: string[] = [];
 
-  constructor(agencies: AgenciesService) {
-    this.ranges = agencies.getRanges();
-    this.statuses = agencies.getStatuses();
+  constructor(private agencies: AgenciesService) {
+    agencies.getRanges$().subscribe((ranges) => (this.ranges = ranges));
+    agencies.getStatuses$().subscribe((statuses) => (this.statuses = statuses));
   }
 
   public onSave(newAgencyData: Agency) {
-    console.warn('Send register data ', newAgencyData);
+    this.agencies
+      .postAgency$(newAgencyData)
+      .subscribe((agency) => console.warn('Sent agency ', agency));
   }
 
   ngOnInit(): void {}

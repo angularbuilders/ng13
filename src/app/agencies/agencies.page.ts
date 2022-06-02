@@ -7,14 +7,19 @@ import { Agency } from '../core/api/agency.interface';
   styleUrls: ['./agencies.page.css'],
 })
 export class AgenciesPage implements OnInit {
-  public agencies: Agency[];
-  constructor(agencies: AgenciesService) {
-    this.agencies = agencies.getAgencies();
+  public agencies: Agency[] = [];
+  constructor(private agenciesService: AgenciesService) {
+    agenciesService
+      .getAgencies$()
+      .subscribe((agencies) => (this.agencies = agencies));
   }
 
   ngOnInit(): void {}
 
   public onReload(list: string) {
     console.warn(`♻️ Reloading ${list}`);
+    this.agenciesService
+      .getAgencies$()
+      .subscribe((agencies) => (this.agencies = agencies));
   }
 }

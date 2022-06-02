@@ -8,12 +8,19 @@ import { Agency } from '../core/api/agency.interface';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public agencies: Agency[];
-  constructor(agencies: AgenciesService) {
-    this.agencies = agencies.getAgencies();
+  public agencies: Agency[] = [];
+  constructor(private agenciesService: AgenciesService) {
+    agenciesService
+      .getAgencies$()
+      .subscribe((agencies) => (this.agencies = agencies));
   }
   public onReload(list: string) {
     console.warn(`♻️ Reloading ${list}`);
+    if (list === 'agencies') {
+      this.agenciesService
+        .getAgencies$()
+        .subscribe((agencies) => (this.agencies = agencies));
+    }
   }
   public ngOnInit(): void {}
 }

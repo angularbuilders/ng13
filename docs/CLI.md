@@ -88,3 +88,10 @@ ng g s core/api/trips
 ```bash
 
 ```
+
+## 7. Http
+
+```bash
+npm i -D json-server json-server-auth
+
+```

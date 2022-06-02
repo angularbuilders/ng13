@@ -90,3 +90,13 @@
 
 - [x] Use container/presenters pattern for AgenciesPage and AgenciesList
 - [x] Use container/presenters pattern for NewAgencyPage and NewAgencyForm
+
+## 7. Http
+
+- [x] Create a service to get agencies from the server
+- [x] Use the Agencies API service to post a new agency to the server
+
+> Student tasks:
+
+- [x] Create a service to get trips from the server
+- [x] Use the Trips API service to post a new trip to the server
