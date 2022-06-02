@@ -32,6 +32,9 @@ export class AgenciesService {
   public getAgencies$(): Observable<Agency[]> {
     return this.http.get<Agency[]>(this.apiUrl + '/agencies');
   }
+  public getAgency$(id: string): Observable<Agency> {
+    return this.http.get<Agency>(this.apiUrl + '/agencies/' + id);
+  }
 
   public postAgency$(agency: Agency): Observable<Agency> {
     return this.http.post<Agency>(this.apiUrl + '/agencies', agency);
