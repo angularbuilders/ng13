@@ -95,8 +95,10 @@
 
 - [x] Create a service to get agencies from the server
 - [x] Use the Agencies API service to post a new agency to the server
+- [x] Use the Agencies API service to get a single agency from the server
 
 > Student tasks:
 
 - [x] Create a service to get trips from the server
 - [x] Use the Trips API service to post a new trip to the server
+- [x] Use the Trips API service to get a single trip from the server
