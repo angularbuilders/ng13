@@ -85,3 +85,8 @@
 - [x] Create a service to manage agencies
 - [x] Create an interface for agencies
 - [x] Create an interface for id name pairs
+
+## 6. Containers
+
+- [x] Use container/presenters pattern for AgenciesPage and AgenciesList
+- [x] Use container/presenters pattern for NewAgencyPage and NewAgencyForm

@@ -82,3 +82,9 @@ ng g i core/api/trip --type=interface
 ng g s core/api/agencies
 ng g s core/api/trips
 ```
+
+## 6. Containers
+
+```bash
+
+```
