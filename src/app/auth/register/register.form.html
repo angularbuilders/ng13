@@ -1,7 +1,7 @@
 <form [formGroup]="form">
   <fieldset>
     <div>
-      <label for="name"> Your name <span *ngIf="hasError('name')">⭕</span></label>
+      <label for="name"> Your name</label>
       <input name="name"
              type="text"
              formControlName="name"
@@ -9,7 +9,7 @@
       <small *ngIf="mustShowMessage('name')">{{ getErrorMessage('name') }}</small>
     </div>
     <div>
-      <label for="email"> Your email address <span *ngIf="hasError('email')">⭕</span></label>
+      <label for="email"> Your email address </label>
       <input name="email"
              type="email"
              formControlName="email"
@@ -17,7 +17,7 @@
       <small *ngIf="mustShowMessage('email')">{{ getErrorMessage('email') }}</small>
     </div>
     <div>
-      <label for="password"> Your password <span *ngIf="hasError('password')">⭕</span></label>
+      <label for="password"> Your password </label>
       <input name="password"
              type="password"
              formControlName="password"
@@ -25,8 +25,7 @@
       <small *ngIf="mustShowMessage('password')">{{ getErrorMessage('password') }}</small>
     </div>
     <div>
-      <label for="confirmPassword">Confirm your password <span
-              *ngIf="hasError('confirmPassword')">⭕</span></label>
+      <label for="confirmPassword">Confirm your password </label>
       <input name="confirmPassword"
              type="password"
              formControlName="confirmPassword"
@@ -41,8 +40,7 @@
              formControlName="acceptTerms"
              [attr.aria-invalid]="hasError('acceptTerms')">
       <label for="acceptTerms"
-             class="form-check-label">Accept Terms & Conditions <span
-              *ngIf="hasError('acceptTerms')">⭕</span></label>
+             class="form-check-label">Accept Terms & Conditions </label>
     </div>
   </fieldset>
   <div>

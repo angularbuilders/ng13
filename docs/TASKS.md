@@ -73,6 +73,7 @@
 
 > Student tasks:
 
+<<<<<<< HEAD
 - [ ] Create a form for the login page
 - [ ] Create a form for a new Trip
 
@@ -85,3 +86,7 @@
 - [x] Create a service to manage agencies
 - [x] Create an interface for agencies
 - [x] Create an interface for id name pairs
+=======
+- [x] Create a form for the login page
+- [x] Create a form for a new Trip
+>>>>>>> 4-forms
