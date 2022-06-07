@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { AgenciesApi } from 'src/app/core/api/agencies.api';
 import { Agency } from 'src/app/core/api/agency.interface';
+import { TripsApi } from 'src/app/core/api/trips.api';
 
 @Component({
   selector: 'app-new-trip-form',
@@ -20,8 +21,12 @@ export class NewTripForm implements OnInit {
 
   public agencies: Agency[] = [];
 
-  constructor(formBuilder: FormBuilder, agenciesApi: AgenciesApi) {
-    this.agencies = agenciesApi.getAgencies();
+  constructor(
+    formBuilder: FormBuilder,
+    agenciesApi: AgenciesApi,
+    private tripsApi: TripsApi
+  ) {
+    this.agencies = agenciesApi.getAll();
     this.form = formBuilder.group(
       {
         agencyId: new FormControl('', [Validators.required]),
@@ -81,6 +86,7 @@ export class NewTripForm implements OnInit {
     const id = this.getDashId(agencyId + ' ' + destination);
     const newTripData = { id, agencyId, destination };
     console.warn('Send trip data ', newTripData);
+    this.tripsApi.post(newTripData);
   }
 
   private datesRange(form: AbstractControl): ValidationErrors | null {

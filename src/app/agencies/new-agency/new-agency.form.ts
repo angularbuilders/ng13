@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AgenciesApi } from 'src/app/core/api/agencies.api';
+import { IdNameApi } from 'src/app/core/api/id-name.api';
 import { IdName } from 'src/app/core/api/id-name.interface';
 import { FormBase } from 'src/app/core/utils/form-base';
 import { FormMessagesService } from 'src/app/core/utils/form-messages.service';
@@ -16,14 +17,15 @@ export class NewAgencyForm extends FormBase implements OnInit {
   public statuses: string[];
 
   constructor(
-    agenciesApi: AgenciesApi,
+    private agenciesApi: AgenciesApi,
+    private idNamesApi: IdNameApi,
     formBuilder: FormBuilder,
     formMessages: FormMessagesService,
     private transformations: TransformationsService
   ) {
     super(formMessages);
-    this.ranges = agenciesApi.getRanges();
-    this.statuses = agenciesApi.getStatuses();
+    this.ranges = idNamesApi.getRanges();
+    this.statuses = idNamesApi.getStatuses();
     this.form = formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       range: new FormControl('', [Validators.required]),
@@ -43,6 +45,7 @@ export class NewAgencyForm extends FormBase implements OnInit {
     const id = this.transformations.getDashId(name);
     const newAgencyData = { id, name, range, status };
     console.warn('Send register data ', newAgencyData);
+    this.agenciesApi.post(newAgencyData);
   }
 
   ngOnInit(): void {}

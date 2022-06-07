@@ -12,7 +12,7 @@ export class AgenciesList implements OnInit {
   public reloading = false;
 
   constructor(agenciesApi: AgenciesApi) {
-    this.agencies = agenciesApi.getAgencies();
+    this.agencies = agenciesApi.getAll();
   }
 
   ngOnInit(): void {}

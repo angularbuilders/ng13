@@ -68,11 +68,11 @@ export class TripsApi {
     },
   ];
 
-  public getTrips() {
+  public getAll() {
     return this.trips;
   }
 
-  public postTrip(trip: Trip) {
-    this.trips.push(trip);
+  public post(trip: Partial<Trip>) {
+    this.trips.push(trip as Trip);
   }
 }

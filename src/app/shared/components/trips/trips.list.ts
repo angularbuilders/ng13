@@ -11,7 +11,7 @@ export class TripsList implements OnInit {
   public trips: Trip[] = [];
   public reloading = false;
   constructor(tripsApi: TripsApi) {
-    this.trips = tripsApi.getTrips();
+    this.trips = tripsApi.getAll();
   }
 
   public reload(list: string) {
