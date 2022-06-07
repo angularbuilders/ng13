@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AgenciesService } from 'src/app/core/api/agencies.service';
+import { AgenciesApi } from 'src/app/core/api/agencies.api';
 import { Agency } from 'src/app/core/api/agency.interface';
+import { IdNameApi } from 'src/app/core/api/id-name.api';
 import { IdName } from 'src/app/core/api/id-name.interface';
 
 @Component({
@@ -12,15 +13,19 @@ export class NewAgencyPage implements OnInit {
   public ranges: IdName[] = [];
   public statuses: string[] = [];
 
-  constructor(private agencies: AgenciesService) {
-    agencies.getRanges$().subscribe((ranges) => (this.ranges = ranges));
-    agencies.getStatuses$().subscribe((statuses) => (this.statuses = statuses));
+  constructor(private idNameApi: IdNameApi, private agencyApi: AgenciesApi) {
+    idNameApi
+      .getRanges$()
+      .subscribe((ranges: IdName[]) => (this.ranges = ranges));
+    idNameApi
+      .getStatuses$()
+      .subscribe((statuses: string[]) => (this.statuses = statuses));
   }
 
   public onSave(newAgencyData: Agency) {
-    this.agencies
-      .postAgency$(newAgencyData)
-      .subscribe((agency) => console.warn('Sent agency ', agency));
+    this.agencyApi
+      .post$(newAgencyData)
+      .subscribe((agency: any) => console.warn('Sent agency ', agency));
   }
 
   ngOnInit(): void {}

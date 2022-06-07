@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgenciesService } from '../core/api/agencies.service';
+import { AgenciesApi } from '../core/api/agencies.api';
 import { Agency } from '../core/api/agency.interface';
 
 @Component({
@@ -9,16 +9,14 @@ import { Agency } from '../core/api/agency.interface';
 })
 export class HomeComponent implements OnInit {
   public agencies: Agency[] = [];
-  constructor(private agenciesService: AgenciesService) {
-    agenciesService
-      .getAgencies$()
-      .subscribe((agencies) => (this.agencies = agencies));
+  constructor(private agenciesApi: AgenciesApi) {
+    agenciesApi.getAll$().subscribe((agencies) => (this.agencies = agencies));
   }
   public onReload(list: string) {
     console.warn(`♻️ Reloading ${list}`);
     if (list === 'agencies') {
-      this.agenciesService
-        .getAgencies$()
+      this.agenciesApi
+        .getAll$()
         .subscribe((agencies) => (this.agencies = agencies));
     }
   }

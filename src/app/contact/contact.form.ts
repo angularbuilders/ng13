@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { FormBase } from '../core/base/form-base';
-import { FormMessagesService } from '../core/base/form-messages.service';
+import { FormBase } from '../core/utils/form-base';
+import { FormMessagesService } from '../core/utils/form-messages.service';
 
 @Component({
   selector: 'app-contact-form',

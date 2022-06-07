@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { FormBase } from 'src/app/core/base/form-base';
-import { FormMessagesService } from 'src/app/core/base/form-messages.service';
-import { FormValidatorService } from 'src/app/core/base/form-validator.service';
+import { FormBase } from 'src/app/core/utils/form-base';
+import { FormMessagesService } from 'src/app/core/utils/form-messages.service';
+import { FormValidatorService } from 'src/app/core/utils/form-validator.service';
 
 @Component({
   selector: 'app-register-form',

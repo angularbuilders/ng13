@@ -63,24 +63,32 @@ ng g c trips/trip --type=page
 ng g c contact --type=form
 ng g c auth/register --type=form
 
+ng g c auth/login --type=form
+
 ng g m agencies/new-agency -m=agencies --route=agency/new
 ng g c agencies/new-agency --type=page
 ng g c agencies/new-agency --type=form
+
+ng g m trips/new-trip --module=trips --route=trip/new
+ng g c trips/new-trip --type=page
+ng g c trips/new-trip --type=form
 ```
 
 ## 5. Services
 
 ```bash
-ng g s core/form-validator
-ng g s core/form-messages
-ng g s core/util
-ng g class core/base/form-base
+ng g s core/utils/form-validator
+ng g s core/utils/form-messages
+ng g s core/utils/transformations
+ng g class core/utils/form-base
 
 ng g i core/api/agency --type=interface
 ng g i core/api/id-name --type=interface
 ng g i core/api/trip --type=interface
 ng g s core/api/agencies
-ng g s core/api/trips
+ng g class core/api/agencies --type=api
+ng g class core/api/idName --type=api
+ng g class core/api/trips --type=api
 ```
 
 ## 6. Containers
