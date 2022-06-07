@@ -77,10 +77,10 @@ ng g c trips/new-trip --type=form
 ## 5. Services
 
 ```bash
-ng g s core/form-validator
-ng g s core/form-messages
-ng g s core/util
-ng g class core/base/form-base
+ng g s core/utils/form-validator
+ng g s core/utils/form-messages
+ng g s core/utils/transformations
+ng g class core/utils/form-base
 
 ng g i core/api/agency --type=interface
 ng g i core/api/id-name --type=interface

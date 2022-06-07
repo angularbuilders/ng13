@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AgenciesService } from 'src/app/core/api/agencies.service';
 import { IdName } from 'src/app/core/api/id-name.interface';
-import { FormBase } from 'src/app/core/base/form-base';
-import { FormMessagesService } from 'src/app/core/base/form-messages.service';
-import { UtilService } from 'src/app/core/base/util.service';
+import { FormBase } from 'src/app/core/utils/form-base';
+import { FormMessagesService } from 'src/app/core/utils/form-messages.service';
+import { TransformationsService } from 'src/app/core/utils/transformations.service';
 
 @Component({
   selector: 'app-new-agency-form',
@@ -19,7 +19,7 @@ export class NewAgencyForm extends FormBase implements OnInit {
     agencies: AgenciesService,
     formBuilder: FormBuilder,
     formMessages: FormMessagesService,
-    private util: UtilService
+    private transformations: TransformationsService
   ) {
     super(formMessages);
     this.ranges = agencies.getRanges();
@@ -40,7 +40,7 @@ export class NewAgencyForm extends FormBase implements OnInit {
 
   public onSubmitClick() {
     const { name, range, status } = this.form.value;
-    const id = this.util.getDashId(name);
+    const id = this.transformations.getDashId(name);
     const newAgencyData = { id, name, range, status };
     console.warn('Send register data ', newAgencyData);
   }
