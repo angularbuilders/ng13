@@ -1,5 +1,5 @@
-import { FormMessagesService } from '../services/form-messages.service';
 import { FormBase } from './form-base';
+import { FormMessagesService } from './form-messages.service';
 
 describe('FormBase', () => {
   it('should create an instance', () => {

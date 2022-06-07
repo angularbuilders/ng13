@@ -73,8 +73,8 @@
 
 > Student tasks:
 
-- [ ] Create a form for the login page
-- [ ] Create a form for a new Trip
+- [x] Create a form for the login page
+- [x] Create a form for a new Trip
 
 ## 5. Services
 
@@ -83,7 +83,7 @@
 - [x] Create a class as a base to form components
 - [x] Create a service for common utilities
 - [x] Create a service to manage agencies
-- [x] Create an interface for agencies
+- [x] Create an interface for an agency object
 - [x] Create an interface for id name pairs
 
 ## 6. Containers
