@@ -1,3 +1,4 @@
+import { Observable, of } from 'rxjs';
 import { IdName } from './id-name.interface';
 
 export class IdNameApi {
@@ -11,10 +12,10 @@ export class IdNameApi {
   ];
   private statuses = ['Active', 'Pending'];
 
-  public getRanges() {
-    return this.ranges;
+  public getRanges$(): Observable<IdName[]> {
+    return of(this.ranges);
   }
-  public getStatuses() {
-    return this.statuses;
+  public getStatuses$(): Observable<string[]> {
+    return of(this.statuses);
   }
 }

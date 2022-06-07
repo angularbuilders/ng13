@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AgenciesService } from 'src/app/core/api/agencies.service';
+import { AgenciesApi } from 'src/app/core/api/agencies.api';
 import { Agency } from 'src/app/core/api/agency.interface';
 
 @Component({
@@ -9,10 +9,10 @@ import { Agency } from 'src/app/core/api/agency.interface';
 })
 export class AgencyPage implements OnInit {
   public agency: Agency = {} as Agency;
-  constructor(route: ActivatedRoute, agenciesService: AgenciesService) {
+  constructor(route: ActivatedRoute, agenciesApi: AgenciesApi) {
     const agencyId = route.snapshot.paramMap.get('id') || '';
-    agenciesService
-      .getAgency$(agencyId)
+    agenciesApi
+      .getById$(agencyId)
       .subscribe((agency) => (this.agency = agency));
   }
 

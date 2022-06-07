@@ -26,7 +26,7 @@ export class NewTripForm implements OnInit {
     agenciesApi: AgenciesApi,
     private tripsApi: TripsApi
   ) {
-    this.agencies = agenciesApi.getAll();
+    agenciesApi.getAll$().subscribe((agencies) => (this.agencies = agencies));
     this.form = formBuilder.group(
       {
         agencyId: new FormControl('', [Validators.required]),
