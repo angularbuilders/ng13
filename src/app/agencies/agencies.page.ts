@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgenciesService } from '../core/api/agencies.service';
+import { AgenciesApi } from '../core/api/agencies.api';
 import { Agency } from '../core/api/agency.interface';
 
 @Component({
@@ -8,8 +8,8 @@ import { Agency } from '../core/api/agency.interface';
 })
 export class AgenciesPage implements OnInit {
   public agencies: Agency[];
-  constructor(agencies: AgenciesService) {
-    this.agencies = agencies.getAgencies();
+  constructor(agenciesApi: AgenciesApi) {
+    this.agencies = agenciesApi.getAll();
   }
 
   ngOnInit(): void {}
