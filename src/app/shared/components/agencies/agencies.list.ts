@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgenciesService } from 'src/app/core/api/agencies.service';
+import { AgenciesApi } from 'src/app/core/api/agencies.api';
 import { Agency } from 'src/app/core/api/agency.interface';
 
 @Component({
@@ -11,8 +11,8 @@ export class AgenciesList implements OnInit {
   public agencies: Agency[];
   public reloading = false;
 
-  constructor(agencies: AgenciesService) {
-    this.agencies = agencies.getAgencies();
+  constructor(agenciesApi: AgenciesApi) {
+    this.agencies = agenciesApi.getAgencies();
   }
 
   ngOnInit(): void {}

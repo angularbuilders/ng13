@@ -7,6 +7,8 @@ import {
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { AgenciesApi } from 'src/app/core/api/agencies.api';
+import { Agency } from 'src/app/core/api/agency.interface';
 
 @Component({
   selector: 'app-new-trip-form',
@@ -16,28 +18,10 @@ import {
 export class NewTripForm implements OnInit {
   public form: FormGroup;
 
-  public agencies = [
-    {
-      id: 'space-y',
-      name: 'Space Y',
-      range: 'Interplanetary',
-      status: 'Active',
-    },
-    {
-      id: 'green-origin',
-      name: 'Green Origin',
-      range: 'Orbital',
-      status: 'Active',
-    },
-    {
-      id: 'virgin-way',
-      name: 'Virgin Way',
-      range: 'Orbital',
-      status: 'Pending',
-    },
-  ];
+  public agencies: Agency[] = [];
 
-  constructor(formBuilder: FormBuilder) {
+  constructor(formBuilder: FormBuilder, agenciesApi: AgenciesApi) {
+    this.agencies = agenciesApi.getAgencies();
     this.form = formBuilder.group(
       {
         agencyId: new FormControl('', [Validators.required]),

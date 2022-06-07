@@ -5,7 +5,7 @@ import { IdName } from './id-name.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class AgenciesService {
+export class AgenciesApi {
   private agencies: Agency[] = [
     {
       id: 'space-y',

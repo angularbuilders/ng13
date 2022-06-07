@@ -86,5 +86,6 @@ ng g i core/api/agency --type=interface
 ng g i core/api/id-name --type=interface
 ng g i core/api/trip --type=interface
 ng g s core/api/agencies
-ng g s core/api/trips
+ng g class core/api/agencies --type=api
+ng g class core/api/trips --type=api
 ```
