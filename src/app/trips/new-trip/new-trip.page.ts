@@ -12,11 +12,11 @@ export class NewTripPage implements OnInit {
   public agencies: Agency[] = [];
 
   constructor(agenciesApi: AgenciesApi, private tripsApi: TripsApi) {
-    this.agencies = agenciesApi.getAll();
+    agenciesApi.getAll$().subscribe((agencies) => (this.agencies = agencies));
   }
 
   public onSave(newTripData: Partial<Trip>) {
-    this.tripsApi.post(newTripData);
+    this.tripsApi.post$(newTripData).subscribe();
   }
 
   ngOnInit(): void {}

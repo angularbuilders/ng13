@@ -13,7 +13,7 @@ export class NewAgencyPage implements OnInit {
   public ranges: IdName[] = [];
   public statuses: string[] = [];
 
-  constructor(private idNameApi: IdNameApi, private agencyApi: AgenciesApi) {
+  constructor(idNameApi: IdNameApi, private agencyApi: AgenciesApi) {
     idNameApi
       .getRanges$()
       .subscribe((ranges: IdName[]) => (this.ranges = ranges));

@@ -12,13 +12,13 @@ export class TripsApi {
   constructor(private http: HttpClient) {}
 
   public getAll$(): Observable<Trip[]> {
-    return this.http.get<Trip[]>(this.apiUrl + '/agencies');
+    return this.http.get<Trip[]>(this.apiUrl + '/trips');
   }
   public getById$(id: string): Observable<Trip> {
-    return this.http.get<Trip>(this.apiUrl + '/agencies/' + id);
+    return this.http.get<Trip>(this.apiUrl + '/trips/' + id);
   }
 
-  public post$(trip: Trip): Observable<Trip> {
-    return this.http.post<Trip>(this.apiUrl + '/agencies', trip);
+  public post$(trip: Partial<Trip>): Observable<Partial<Trip>> {
+    return this.http.post<Partial<Trip>>(this.apiUrl + '/trips', trip);
   }
 }

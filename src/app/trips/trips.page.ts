@@ -11,11 +11,11 @@ export class TripsPage implements OnInit {
   public reloading = false;
 
   constructor(private tripsApi: TripsApi) {
-    this.trips = tripsApi.getAll();
+    this.tripsApi.getAll$().subscribe((trips) => (this.trips = trips));
   }
 
   public onReload() {
-    this.trips = this.tripsApi.getAll();
+    this.tripsApi.getAll$().subscribe((trips) => (this.trips = trips));
   }
 
   ngOnInit(): void {}
