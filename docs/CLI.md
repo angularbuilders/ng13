@@ -94,5 +94,6 @@ ng g class core/api/trips --type=api
 ## 6. Containers
 
 ```bash
+ng g c agencies/agency --type=view
 
 ```
