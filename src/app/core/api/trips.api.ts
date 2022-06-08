@@ -72,6 +72,10 @@ export class TripsApi {
     return this.trips;
   }
 
+  public getById(id: string) {
+    return this.trips.find((t) => t.id === id);
+  }
+
   public post(trip: Partial<Trip>) {
     this.trips.push(trip as Trip);
   }
