@@ -7,7 +7,8 @@ import { Agency } from 'src/app/core/api/agency.interface';
   styleUrls: ['./agency.view.css'],
 })
 export class AgencyView implements OnInit {
-  @Input() public agency: Agency = {} as Agency;
+  @Input() public agencyId!: string;
+  @Input() public agency?: Agency;
   constructor() {}
 
   ngOnInit(): void {}

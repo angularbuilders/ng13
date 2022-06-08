@@ -8,11 +8,12 @@ import { Agency } from 'src/app/core/api/agency.interface';
   styleUrls: ['./agency.page.css'],
 })
 export class AgencyPage implements OnInit {
+  public agencyId: string;
   public agency: Agency = {} as Agency;
   constructor(route: ActivatedRoute, agenciesApi: AgenciesApi) {
-    const agencyId = route.snapshot.paramMap.get('id') || '';
+    this.agencyId = route.snapshot.paramMap.get('id') || '';
     agenciesApi
-      .getById$(agencyId)
+      .getById$(this.agencyId)
       .subscribe((agency) => (this.agency = agency));
   }
 
