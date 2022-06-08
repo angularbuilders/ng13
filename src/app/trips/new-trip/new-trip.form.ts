@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { AgenciesApi } from 'src/app/core/api/agencies.api';
 import { Agency } from 'src/app/core/api/agency.interface';
+import { Trip } from 'src/app/core/api/trip.interface';
 import { TripsApi } from 'src/app/core/api/trips.api';
 
 @Component({
@@ -84,7 +85,12 @@ export class NewTripForm implements OnInit {
   public onSubmitClick() {
     const { agencyId, destination } = this.form.value;
     const id = this.getDashId(agencyId + ' ' + destination);
-    const newTripData = { id, agencyId, destination, status: 'Pending' };
+    const newTripData: Partial<Trip> = {
+      id,
+      agencyId,
+      destination,
+      status: 'Waiting',
+    };
     console.warn('Send trip data ', newTripData);
     this.tripsApi.post(newTripData);
   }
