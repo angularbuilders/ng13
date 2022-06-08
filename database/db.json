@@ -19,18 +19,6 @@
       "name": "Virgin Way",
       "range": "Orbital",
       "status": "Pending"
-    },
-    {
-      "id": "new-asa",
-      "name": "New Asa",
-      "range": "Interstellar",
-      "status": "Pending"
-    },
-    {
-      "id": "monfor-nasa",
-      "name": "Monfor Nasa",
-      "range": "Orbital",
-      "status": "Active"
     }
   ],
   "trips": [
@@ -93,14 +81,6 @@
       "status": "Waiting",
       "extraLuggagePricePerKilo": 0,
       "premiumFoodPrice": 1000
-    },
-    {
-      "id": "new-asa-jupyter",
-      "agencyId": "new-asa",
-      "destination": "Jupyter",
-      "places": 3,
-      "startDate": "2022-12-15",
-      "endDate": "2031-11-14"
     }
   ]
 }
