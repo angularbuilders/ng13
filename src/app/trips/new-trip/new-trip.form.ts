@@ -44,9 +44,17 @@ export class NewTripForm extends FormBase implements OnInit {
   }
 
   public onSubmitClick() {
-    const { agencyId, destination } = this.form.value;
+    const { agencyId, destination, places, startDate, endDate } =
+      this.form.value;
     const id = this.getDashId(agencyId + ' ' + destination);
-    const newTripData = { id, agencyId, destination };
+    const newTripData = {
+      id,
+      agencyId,
+      destination,
+      places,
+      startDate,
+      endDate,
+    };
     console.warn('Send trip data ', newTripData);
     this.save.emit(newTripData);
   }
