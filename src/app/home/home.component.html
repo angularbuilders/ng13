@@ -1,3 +1,4 @@
 <app-agencies-list [agencies]="agencies"
-                   (reload)="onReload($event)"></app-agencies-list>
-<app-trips-list></app-trips-list>
+                   (reload)="onReload('agencies')"></app-agencies-list>
+<app-trips-list [trips]="trips"
+                (reload)="onReload('trips')"></app-trips-list>

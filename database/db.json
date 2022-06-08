@@ -19,12 +19,6 @@
       "name": "Virgin Way",
       "range": "Orbital",
       "status": "Pending"
-    },
-    {
-      "id": "new-asa",
-      "name": "New Asa",
-      "range": "Interstellar",
-      "status": "Pending"
     }
   ],
   "trips": [

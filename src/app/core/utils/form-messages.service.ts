@@ -29,6 +29,9 @@ export class FormMessagesService {
     errorMessage += errors['minlength']
       ? `🔥 More than ${errors['minlength'].requiredLength} chars`
       : ' ';
+    errorMessage += errors['maxlength']
+      ? `🔥 Less than ${errors['maxlength'].requiredLength} chars`
+      : '';
     return errorMessage;
   }
 

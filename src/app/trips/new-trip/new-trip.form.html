@@ -7,7 +7,7 @@
               formControlName="agencyId"
               [attr.aria-invalid]="hasError('agencyId')">
         <option selected
-                value="">Select a agencyId</option>
+                value="">Select an Agency</option>
         <option *ngFor="let agency of agencies"
                 [value]="agency.id">
           {{ agency.name }}

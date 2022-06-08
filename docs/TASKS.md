@@ -83,7 +83,7 @@
 - [x] Create a class as a base to form components
 - [x] Create a service for common utilities
 - [x] Create a service to manage agencies
-- [x] Create an interface for agencies
+- [x] Create an interface for an agency object
 - [x] Create an interface for id name pairs
 
 ## 6. Containers

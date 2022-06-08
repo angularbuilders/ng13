@@ -1,43 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
   FormControl,
-  FormGroup,
   ValidationErrors,
   Validators,
 } from '@angular/forms';
+import { Agency } from 'src/app/core/api/agency.interface';
+import { Trip } from 'src/app/core/api/trip.interface';
+import { FormBase } from 'src/app/core/utils/form-base';
+import { FormMessagesService } from 'src/app/core/utils/form-messages.service';
 
 @Component({
   selector: 'app-new-trip-form',
   templateUrl: './new-trip.form.html',
   styleUrls: ['./new-trip.form.css'],
 })
-export class NewTripForm implements OnInit {
-  public form: FormGroup;
-
-  public agencies = [
-    {
-      id: 'space-y',
-      name: 'Space Y',
-      range: 'Interplanetary',
-      status: 'Active',
-    },
-    {
-      id: 'green-origin',
-      name: 'Green Origin',
-      range: 'Orbital',
-      status: 'Active',
-    },
-    {
-      id: 'virgin-way',
-      name: 'Virgin Way',
-      range: 'Orbital',
-      status: 'Pending',
-    },
-  ];
-
-  constructor(formBuilder: FormBuilder) {
+export class NewTripForm extends FormBase implements OnInit {
+  @Input() public agencies: Agency[] = [];
+  @Output() public save = new EventEmitter<Partial<Trip>>();
+  constructor(formBuilder: FormBuilder, fms: FormMessagesService) {
+    super(fms);
     this.form = formBuilder.group(
       {
         agencyId: new FormControl('', [Validators.required]),
@@ -60,43 +43,20 @@ export class NewTripForm implements OnInit {
     );
   }
 
-  public hasError(controlName: string): boolean {
-    const control = this.getControl(controlName);
-    if (!control) return false;
-    return control.invalid;
-  }
-
-  public mustShowMessage(controlName: string): boolean {
-    const control = this.getControl(controlName);
-    if (!control) return false;
-    return control.touched && control.invalid;
-  }
-
-  public getErrorMessage(controlName: string): string {
-    const control = this.getControl(controlName);
-    if (!control) return '';
-    if (!control.errors) return '';
-    const errors = control.errors;
-    let errorMessage = '';
-    errorMessage += errors['required'] ? '🔥 Field is required ' : ' ';
-    errorMessage += errors['minlength']
-      ? `🔥 More than ${errors['minlength'].requiredLength} chars`
-      : ' ';
-    errorMessage += errors['maxlength']
-      ? `🔥 Less than ${errors['maxlength'].requiredLength} chars`
-      : '';
-    return errorMessage;
-  }
-
-  private getControl(controlName: string): AbstractControl | null {
-    return this.form.get(controlName);
-  }
-
   public onSubmitClick() {
-    const { agencyId, destination } = this.form.value;
+    const { agencyId, destination, places, startDate, endDate } =
+      this.form.value;
     const id = this.getDashId(agencyId + ' ' + destination);
-    const newTripData = { id, agencyId, destination };
+    const newTripData = {
+      id,
+      agencyId,
+      destination,
+      places,
+      startDate,
+      endDate,
+    };
     console.warn('Send trip data ', newTripData);
+    this.save.emit(newTripData);
   }
 
   private datesRange(form: AbstractControl): ValidationErrors | null {
