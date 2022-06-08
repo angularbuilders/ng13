@@ -84,7 +84,7 @@ export class NewTripForm implements OnInit {
   public onSubmitClick() {
     const { agencyId, destination } = this.form.value;
     const id = this.getDashId(agencyId + ' ' + destination);
-    const newTripData = { id, agencyId, destination };
+    const newTripData = { id, agencyId, destination, status: 'Pending' };
     console.warn('Send trip data ', newTripData);
     this.tripsApi.post(newTripData);
   }

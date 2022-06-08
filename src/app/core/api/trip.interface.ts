@@ -9,7 +9,7 @@ export interface Trip {
   flightPrice: number;
   stayingNightPrice?: number;
   kind?: string;
-  status?: string;
+  status: string;
   extraLuggagePricePerKilo?: number;
   premiumFoodPrice?: number;
 }
